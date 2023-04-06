@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Traco Tech | Tegra - EX 26</title>
+    </head>
+
+    <body>
+        <h1>EXERCICIO 26</h1>
+        <p>
+            Fazer um programa para receber uma palavra (string); Calcular a
+            quantidade de vogais e a quantidade consoantes da palavra; Exibir os
+            valores calculados.
+        </p>
+
+        <script>
+            function contarVogaisConsoantes(palavra) {
+
+                palavra = palavra.toLowerCase();
+
+                const vogais = /[aeiou]/g;
+                const consoantes = /[bcdfghjklmnpqrstvwxyz]/g;
+
+                const numVogais = (palavra.match(vogais) || []).length;
+                const numConsoantes = (palavra.match(consoantes) || []).length;
+
+                alert(`Vogais: ${numVogais} \n Consoantes: ${numConsoantes}`);
+                }
+
+                const palavra = prompt('Digite uma palavra:');
+                contarVogaisConsoantes(palavra);
+        </script>
+    </body>
+</html>

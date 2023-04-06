@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Traco Tech | Tegra - EX 27</title>
+    </head>
+
+    <body>
+        <h1>EXERCICIO 27</h1>
+        <p>
+            Fazer um programa para verificar se um número ou palavra é palíndroma;
+            Exibir como saída se o número ou palavra "é palíndroma" ou "não é
+            palíndroma". Um palíndromo é algo que pode ser lido em qualquer
+            sentido. Ex.: 110011, Reger, Osso.
+        </p>
+
+
+        <script>
+            function verificarPalindromo(valor) {
+
+                const str = String(valor).toLowerCase();
+
+                const strReversa = str.split('').reverse().join('');
+
+                if (str === strReversa) {
+                    alert("Saída: É palíndroma.")
+                } else {
+                    alert("Saída: Não é palíndroma.")
+                }
+            }
+
+            const palavra = prompt('Palavra:');;
+            verificarPalindromo(palavra);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Traco Tech | Tegra - EX 10</title>
+    </head>
+        
+    <body>
+        <h1>EXERCICIO 10</h1>
+        <p>
+            Fazer um programa para ler três números inteiros. Em seguida, mostrar
+            qual o menor dentre os três números lidos. Em caso de empate, mostrar
+            apenas uma vez.
+        </p>
+
+        <label for="num1">Primeiro valor: </label>
+        <input type="number" id="num1"> <br>
+        <label for="num2">Segundo valor: </label>
+        <input type="number" id="num2"> <br>
+        <label for="num3">Terceiro valor: </label>
+        <input type="number" id="num3"> <br>
+
+        <button onclick="verificar()">VERIFICAR</button>
+
+        <p>MENOR = <span id="menor"></span></p>
+
+        <script>
+
+            function verificar() {
+
+                var num1 = parseInt(document.getElementById("num1").value);
+                var num2 = parseInt(document.getElementById("num2").value);
+                var num3 = parseInt(document.getElementById("num3").value);
+
+                var menor;
+
+                if (num1 < num2 && num1 < num3) {
+                    menor = num1;
+                }else if (num2 < num1 && num2 < num3){
+                    menor = num2;
+                }else {
+                    menor = num3;
+                }
+
+                document.getElementById("menor").innerHTML = menor;
+            }
+        </script>
+    </body>
+</html>

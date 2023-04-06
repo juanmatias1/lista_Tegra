@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Traco Tech | Tegra - EX 2</title>
+    </head>
+
+    <body>
+        <h1>EXERCICIO 2</h1>
+        <p>
+            Fazer um programa para ler as medidas da base e altura de um retângulo.
+            Em seguida, mostrar o valor da área, perímetro e diagonal deste retângulo,
+            com quatro casas decimais, conforme exemplo.
+        </p>
+
+        <label for="base">Base do retângulo:</label>
+        <input type="number" id="base"> <br>
+
+        <label for="altura">Altura do retângulo:</label>
+        <input type="number" id="altura"> <br>
+
+        <button onclick="calcular()">CALCULAR</button>
+
+        <p>ÁREA = <span id="area"></span></p>
+        <p>PERÍMETRO = <span id="perimetro"></span></p>
+        <p>DIAGONAL = <span id="diagonal"></span></p>
+
+
+        <script>
+
+            function calcular() {
+
+                var base = parseFloat(document.getElementById("base").value);
+			    var altura = parseFloat(document.getElementById("altura").value);
+
+                var area = base * altura;
+                var perimetro = 2 * (base + altura);
+                var diagonal = Math.sqrt(Math.pow(base, 2) + Math.pow(altura, 2));
+
+                document.getElementById("area").innerHTML = area.toFixed(4);
+                document.getElementById("perimetro").innerHTML = perimetro.toFixed(4);
+                document.getElementById("diagonal").innerHTML = diagonal.toFixed(4);
+            }
+        </script>
+    </body>
+</html>

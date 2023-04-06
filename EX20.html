@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Traco Tech | Tegra - EX 20</title>
+    </head>
+
+    <body>
+        <h1>EXERCICIO 20</h1>
+        <p>
+            Escreva um programa que exiba a soma de todos os números
+            compreendidos entre um intervalo dado pelo usuário.
+        </p>
+
+        <label for="numUm">Número inicial: </label>
+        <input type="number" id="numUm"> <br>
+        <label for="numDois">Número final: </label>
+        <input type="number" id="numDois"> <br>
+
+        <button onclick="calcular()">ENVIAR</button>
+
+        <p id="resultado"></p>
+
+        <script>
+
+            function calcular() {
+
+                var numUm = parseInt(document.getElementById("numUm").value);
+                var numDois = parseInt(document.getElementById("numDois").value);
+
+                var soma = 0;
+
+                for (var i = numUm; i <= numDois; i++) {
+                    soma += i;
+                }
+
+                document.getElementById("resultado").innerHTML = "Resultado: " + soma;
+            }
+
+        </script>
+    </body>
+</html>

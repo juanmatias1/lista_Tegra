@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Traco Tech | Tegra - EX 21</title>
+    </head>
+
+    <body>
+        <h1>EXERCICIO 21</h1>
+        <p>
+            Leia um valor inteiro X. Em seguida mostre os pares de 1 até X, um valor por
+            linha, inclusive o X, se for o caso.
+        </p>
+
+        <label for="valorX">Digite o valor de X:</label>
+        <input type="number" id="valorX">
+
+        <button onclick="enviar()">ENVIAR</button>
+
+        <p id="resultado"></p>
+
+        <script>
+
+            function enviar() {
+                var valorX = parseInt(document.getElementById("valorX").value);
+
+                var output = "";
+
+                for(var i = 1; i <= valorX; i++) {
+                    if (i % 2 === 0) {
+                        output += i + "<br>";
+                    }
+                }
+                document.getElementById("resultado").innerHTML = output;
+            }
+        </script>
+    </body>
+</html>

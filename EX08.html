@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Traco Tech | Tegra - EX 8</title>
+    </head>
+
+    <body>
+        <h1>EXERCICIO 8</h1>
+        <p>
+            Fazer um programa para ler três medidas A, B e C. Em seguida, calcular e
+            mostrar (imprimir os dados com quatro casas decimais):
+            a) a área do quadrado que tem lado A
+            b) a área do triângulo retângulo que base A e altura B
+            c) a área do trapézio que tem bases A e B, e altura C
+        </p>
+
+        <label for="medidaA">Digite a medida A: </label>
+        <input type="number" id="medidaA"> <br>
+
+        <label for="medidaB">Digite a medida B: </label>
+        <input type="number" id="medidaB"> <br>
+
+        <label for="medidaC">Digite a medida C: </label>
+        <input type="number" id="medidaC"> <br>
+
+        <button onclick="calcular()">CALCULAR</button>
+
+        <p>ÁREA DO QUADRADO = <span id="quadrado"></span></p>
+        <p>ÁREA DO TRIÂNGULO = <span id="triangulo"></span></p>
+        <p>ÁREA DO TRAPÉZIO = <span id="trapezio"></span></p>
+
+        <script>
+
+            function calcular() {
+
+                var A = parseFloat(document.getElementById("medidaA").value);
+                var B = parseFloat(document.getElementById("medidaB").value);
+                var C = parseFloat(document.getElementById("medidaC").value);
+
+                var quadrado = A * A;
+                var triangulo = (A * B) / 2;
+                var trapezio = ((A + B) * C) / 2;
+
+                document.getElementById("quadrado").innerHTML = quadrado.toFixed(4);
+                document.getElementById("triangulo").innerHTML = triangulo.toFixed(4);
+                document.getElementById("trapezio").innerHTML = trapezio.toFixed(4);
+            }
+        </script>
+    </body>
+</html>

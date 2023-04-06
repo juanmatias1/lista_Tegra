@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Traco Tech | Tegra - EX 24</title>
+    </head>
+
+    <body>
+        <h1>EXERCICIO 24</h1>
+        <p>
+            Receber 5 valores numéricos inteiros; Ordenar os valores em ordem
+            crescente; Exibir os valores ordenados..
+        </p>
+
+        <script>
+
+            const valores = [];
+            for(let i = 1; i <= 5; i++) {
+            const valor = parseInt(prompt(`Digite o ${i}º valor:`));
+            valores.push(valor);
+            }
+
+            valores.sort((a, b) => a - b);
+
+            alert(`Ordenados: ${valores.join(', ')}`);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Traco Tech | Tegra - EX 15</title>
+    </head>
+
+    <body>
+        <h1>EXERCICIO 15</h1>
+        <p>
+            Fazer um programa para ler a quantidade de glicose no sangue de uma
+            pessoa e depois mostrar na tela a classificação desta glicose de acordo
+            com a tabela de referência abaixo:
+            Classificação Glicose
+            Normal -> Até 100 mg/dl
+            Elevado -> Entre 100 e 140 mg/dl
+            Diabetes -> Maior que 140 mg/dl
+        </p>
+
+        <label for="glicose">Digite a medida da glicose: </label>
+        <input type="number" id="glicose">
+
+        <button onclick="calcular()">OK</button>
+
+        <p id="resultado"></p>
+
+        <script>
+
+            function calcular() {
+                var glicose = parseInt(document.getElementById("glicose").value);
+
+                if (glicose > 140) {
+                    document.getElementById("resultado").innerHTML = "Classificação: Diabetes";
+                }else if (glicose > 100) {
+                    document.getElementById("resultado").innerHTML = "Classificação: Elevado";
+                }else {
+                    document.getElementById("resultado").innerHTML = "Classificação: Normal";
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Traco Tech | Tegra - EX 14</title>
+    </head>
+
+    <body>
+        <h1>EXERCICIO 14</h1>
+        <p>
+            Fazer um programa para calcular o troco no processo de pagamento de
+            um produto de uma mercearia. O programa deve ler o preço unitário do
+            produto, a quantidade de unidades compradas deste produto, e o valor em
+            dinheiro dado pelo cliente. Seu programa deve mostrar o valor do troco a
+            ser devolvido ao cliente. Se o dinheiro dado pelo cliente não for suficiente,
+            mostrar uma mensagem informando o valor restante conforme exemplo. 
+        </p>
+
+        <label for="preco">Preço unitário do produto: </label>
+        <input type="number" id="preco"> <br>
+        <label for="quantidade">Quantidade comprada: </label>
+        <input type="number" id="quantidade"> <br>
+        <label for="dinheiroRecebido">Dinheiro recebido: </label>
+        <input type="number" id="dinheiroRecebido"> <br>
+
+        <button onclick="calcular()">OK</button>
+
+        <p id="resultado"></p>
+
+        <script>
+
+            function calcular() {
+
+                var preco = parseFloat(document.getElementById("preco").value);
+                var quantidade = parseFloat(document.getElementById("quantidade").value);
+                var dinheiroRecebido = parseFloat(document.getElementById("dinheiroRecebido").value);
+
+                var valorTotal = preco * quantidade;
+
+                if (dinheiroRecebido >= valorTotal) {
+                    var troco = dinheiroRecebido - valorTotal;
+                    document.getElementById("resultado").innerHTML = "TROCO = " + troco.toFixed(2);
+                }else {
+                    var restante = valorTotal - dinheiroRecebido;
+                    document.getElementById("resultado").innerHTML = "DINHEIRO INSUFICIENTE. FALTAM " + restante.toFixed(2) + " REAIS";
+                }
+            }
+        </script>
+    </body>
+</html>

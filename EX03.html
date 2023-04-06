@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Traco Tech | Tegra - EX 3</title>
+    </head>
+
+    <body>
+        <h1>EXERCICIO 3</h1>
+        <p>
+            Fazer um programa para ler o nome e idade de duas pessoas. Ao final
+            mostrar uma mensagem com os nomes e a idade média entre essas
+            pessoas, com uma casa decimal, conforme exemplo.
+        </p>
+
+        <label for="nomeUm">Nome 1: </label>
+        <input type="text" id="nomeUm"> <br>
+        <label for="idadeUm">Idade 1: </label>
+        <input type="number" id="idadeUm"> <br> <br>
+
+        <label for="nomeDois">Nome 2: </label>
+        <input type="text" id="nomeDois"> <br>
+        <label for="idadeDois">Idade 2: </label>
+        <input type="number" id="idadeDois"> <br>
+
+        <button onclick="mediaIdade()">ENVIAR</button>
+
+        <p id="resultado"></p>
+
+        <script>
+            function mediaIdade() {
+
+                var nomeUm = String(document.getElementById("nomeUm").value);
+                var nomeDois = String(document.getElementById("nomeDois").value);
+
+                var idadeUm = parseFloat(document.getElementById("idadeUm").value);
+                var idadeDois = parseFloat(document.getElementById("idadeDois").value);
+
+                var media = (idadeUm + idadeDois) / 2;
+
+                var resultado = "A idade média de " + nomeUm + " e " + nomeDois + " é de " + media.toFixed(1) + " anos ";
+
+                document.getElementById("resultado").innerHTML = resultado;
+            }
+        </script>
+    </body>
+</html>

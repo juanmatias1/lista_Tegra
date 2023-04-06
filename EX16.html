@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Traco Tech | Tegra - EX 16</title>
+    </head>
+
+    <body>
+        <h1>EXERCICIO 16</h1>
+        <p>
+            No arremesso de dardo, o atleta tem três chances para lançar o dardo à
+            maior distância que conseguir. Você deve criar um programa para, dadas
+            as medidas das três tentativas de lançamento, informar qual foi a maior.
+        </p>
+
+        <p>Digite as três distâncias:</p>
+        <label for="distanciaUm">Primeiro arremesso: </label>
+        <input type="number" id="distanciaUm"> <br>
+        <label for="distanciaDois">Segundo arremesso: </label>
+        <input type="number" id="distanciaDois"> <br>
+        <label for="distanciaTres">Terceiro arremesso: </label>
+        <input type="number" id="distanciaTres"> <br>
+
+        <button onclick="calcular()">ENVIAR</button>
+
+        <p id="maior"></p>
+
+        <script>
+
+            function calcular() {
+
+                var distanciaUm = parseFloat(document.getElementById("distanciaUm").value);
+                var distanciaDois = parseFloat(document.getElementById("distanciaDois").value);
+                var distanciaTres = parseFloat(document.getElementById("distanciaTres").value);
+
+                var maior;
+
+                if (distanciaUm > distanciaDois && distanciaUm > distanciaTres) {
+                    maior = distanciaUm;
+                }else if (distanciaDois > distanciaUm && distanciaDois > distanciaTres) {
+                    maior = distanciaDois;
+                }else {
+                    maior = distanciaTres;
+                }
+                document.getElementById("maior").innerHTML = "MAIOR DISTÂNCIA = " + maior;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Traco Tech | Tegra - EX 1</title>
+    </head>
+
+    <body>
+        <h1>EXERCICIO 1</h1>
+        <p>
+            Fazer um programa para ler as medidas da largura e comprimento de um
+            terreno retangular com uma casa decimal, bem como o valor do metro
+            quadrado do terreno com duas casas decimais. Em seguida, o programa
+            deve mostrar o valor da área do terreno, bem como o valor do preço do
+            terreno, ambos com duas casas decimais, conforme exemplo.
+        </p>
+
+        <label for="largura">Largura do terreno:</label>
+        <input type="number" id="largura"><br>
+
+        <label for="comprimento">Comprimento do terreno:</label>
+        <input type="number" id="comprimento"><br>
+
+        <label for="valor">Valor do metro quadrado do terreno:</label>
+        <input type="number" id="valor"><br>
+
+        <button onclick="calcular()">CALCULAR</button>
+
+        <p>Área do terreno: <span id="area"></span> metros quadrados</p>
+        <p>Preço do terreno: R$<span id="preco"></span></p>
+        
+        
+        <script>
+
+            function calcular() {
+    
+                var largura = parseFloat(document.getElementById("largura").value);
+                var comprimento = parseFloat(document.getElementById("comprimento").value);
+                var valor = parseFloat(document.getElementById("valor").value);
+        
+                var area = largura * comprimento;
+                var preco = area * valor;
+
+                document.getElementById("area").innerHTML = area.toFixed(2);
+                document.getElementById("preco").innerHTML = preco.toFixed(2);
+            }
+        </script>
+    </body>
+</html>

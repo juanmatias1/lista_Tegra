@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Traco Tech | Tegra - EX 19</title>
+    </head>
+
+    <body>
+        <h1>EXERCICIO 19</h1>
+        <p>
+            Uma empresa vai conceder um aumento percentual de salário aos seus
+            funcionários dependendo de quanto cada pessoa ganha, conforme tabela
+            ao lado. Fazer um programa para ler o salário de uma pessoa, daí mostrar
+            qual o novo salário dessa pessoa depois do aumento, quanto foi o aumento
+            e qual foi a porcentagem de aumento.
+            Salário atual Aumento
+            Até R$ 999.00 -> 20%
+            Entre R$ 1000.00 e R$ 2999.00 -> 15%
+            Entre R$ 3000.00 e R$ 7999.00 -> 10%
+            Acima de R$ 8000.00 -> 05%
+        </p>
+
+        <label for="salario">Digite o salario da pessoa: </label>
+        <input type="number" id="salario">
+
+        <button onclick="calcular()">CALCULAR</button>
+
+        <p id="resultado"></p>
+
+        <script>
+
+            function calcular() {
+
+                var salario = parseFloat(document.getElementById("salario").value);
+
+                if (salario <= 999) {
+                    var percentual = 20;
+                }else if (salario <= 2999) {
+                    var percentual = 15;
+                }else if (salario <= 7999) {
+                    var percentual = 10;
+                }else {
+                    var percentual = 5;
+                }
+
+                var aumento = salario * percentual / 100;
+                var novoSalario = salario + aumento;
+
+                document.getElementById("resultado").innerHTML = "Novo salário = " + novoSalario + "<br>" +
+                                                                 "Aumento = " + aumento + "<br>" +
+                                                                 "Porcentagem = " + percentual + "%"
+            }
+        </script>
+    </body>
+</html>

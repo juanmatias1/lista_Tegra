@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Traco Tech | Tegra - EX 30</title>
+    </head>
+
+    <body>
+        <h1>EXERCICIO 30</h1>
+        <p>
+            Escreva um programa que receba um valor numérico de até dois
+            algarismos e transcreva esse valor por extenso.
+        </p>
+
+
+        <script>
+            function escreverValorPorExtenso(valor) {
+                var unidades = ['zero', 'um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove'];
+                var dezenas = ['dez', 'onze', 'doze', 'treze', 'quatorze', 'quinze', 'dezesseis', 'dezessete', 'dezoito', 'dezenove'];
+                var dezenas2 = ['vinte', 'trinta', 'quarenta', 'cinquenta', 'sessenta', 'setenta', 'oitenta', 'noventa'];
+
+                if (valor < 0 || valor > 99 || isNaN(valor)) {
+                    return 'Valor inválido';
+                }
+
+                if (valor < 10) {
+                    return unidades[valor];
+                }
+
+                if (valor < 20) {
+                    return dezenas[valor - 10];
+                }
+
+                var unidade = valor % 10;
+                var dezena = Math.floor(valor / 10) - 2;
+
+                if (unidade === 0) {
+                    return dezenas2[dezena];
+                } else {
+                    return dezenas2[dezena] + ' e ' + unidades[unidade];
+                }
+            }
+
+            var valor = prompt('Digite um valor numérico de até dois algarismos:');
+            var valorPorExtenso = escreverValorPorExtenso(parseInt(valor));
+            alert('Saida: ' + valorPorExtenso);
+        </script>
+    </body>
+</html>

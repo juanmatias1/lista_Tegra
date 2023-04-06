@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Traco Tech | Tegra - EX 11</title>
+    </head>
+
+    <body>
+        <h1>EXERCICIO 11</h1>
+        <p>
+            Fazer um programa para ler as duas notas que um aluno obteve no
+            primeiro e segundo semestres de uma disciplina anual. Em seguida,
+            mostrar a nota final que o aluno obteve (com uma casa decimal) no ano
+            juntamente com um texto explicativo. Caso a nota final do aluno seja
+            inferior a 60.00, mostrar a mensagem "REPROVADO", conforme exemplos.
+        </p>
+
+        <label for="primeiraNota">Digite a primeira nota:</label>
+        <input type="number" id="primeiraNota"> <br>
+        <label for="segundaNota">Digite a segunda nota:</label>
+        <input type="number" id="segundaNota"> <br>
+
+        <button onclick="calcular()">CALCULAR</button>
+
+        <p>NOTA FINAL = <span id="notaFinal"></span></p>
+        <p id="resultado"></p>
+
+        <script>
+
+            function calcular() {
+
+                var primeiraNota = parseFloat(document.getElementById("primeiraNota").value);
+                var segundaNota = parseFloat(document.getElementById("segundaNota").value);
+
+                var notaFinal = primeiraNota + segundaNota;
+
+                if(notaFinal >= 60) {
+                    document.getElementById("resultado").innerHTML = "Aprovado";
+                }else {
+                    document.getElementById("resultado").innerHTML = "Reprovado";
+                }
+
+                document.getElementById("notaFinal").innerHTML = notaFinal.toFixed(1);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Traco Tech | Tegra - EX 17</title>
+    </head>
+
+    <body>
+        <h1>EXERCICIO 17</h1>
+        <p>
+            Fazer um programa para ler dois números inteiros, e dizer se um número é
+            múltiplo do outro. Os números podem ser digitados em qualquer ordem.
+        </p>
+
+        <p>Digite dois números inteiros:</p>
+        <label for="numUm">Número 1:</label>
+        <input type="number" id="numUm"> <br>
+        <label for="numDois">Número 2:</label>
+        <input type="number" id="numDois"> <br>
+
+        <button onclick="calcular()">ENVIAR</button>
+
+        <p id="resultado"></p>
+
+
+        <script>
+
+            function calcular() {
+
+                var numUm = parseInt(document.getElementById("numUm").value);
+                var numDois = parseInt(document.getElementById("numDois").value);
+
+                if (numUm % numDois == 0 || numDois % numUm == 0) {
+                    document.getElementById("resultado").innerHTML = "São múltiplos."
+                }else {
+                    document.getElementById("resultado").innerHTML = "Não são múltiplos."
+                }
+            }
+        </script>
+    </body>
+</html>
